@@ -3,6 +3,18 @@ fsl-imx6-qtwayland layer.
 
 Please see the corresponding sections below for details.
 
+This layer is to verify we can use Qt5 as WaylandCompositor on Freescale i.MX6 platfrom.
+
+Please see original discuss:
+
+  https://community.freescale.com/message/450084
+
+Note
+==============
+
+You need to use install =libgles-mx6= manually to prevent following error.
+
+   QtCompositor: Failed to initialize EGL display. Could not find glEGLImageTargetTexture2DOES.
 
 Dependencies
 ============
@@ -10,15 +22,19 @@ Dependencies
 This layer depends on:
 
   URI: git://git.openembedded.org/bitbake
-  branch: master
+  branch: dizzy
 
   URI: git://git.openembedded.org/openembedded-core
   layers: meta
   branch: master
 
-  URI: git://git.yoctoproject.org/xxxx
-  layers: xxxx
-  branch: master
+  URI: git://git.yoctoproject.org/meta-fsl-arm
+  layers: meta-fsl-arm
+  branch: dizzy
+
+  URI: git://github.com/meta-qt5
+  layers: meta-qt5
+  branch: dizzy
 
 
 Patches
